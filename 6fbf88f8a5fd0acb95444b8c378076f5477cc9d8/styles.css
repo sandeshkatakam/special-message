@@ -14,15 +14,24 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0,0,0,.75);
     font-family: 'Merriweather', serif;
+    background-image: url("img/wood.jpg");
+    background-color: #cccccc;
 }
 
+.hero-image {
+    background-image: url("img/infinite-loop-01.jpg"); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 500px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
 
 .container {
     width: 800px;
     max-width: 80%;
-    background-color: rgb(242, 226, 226);
+    background-color: rgb(242, 226, 226, 0.4);
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 10px 2px;
@@ -80,6 +89,42 @@ body {
 }
   
 
-  
 
-  
+#infinite {
+	background-color: #222;
+  background-image: url(../img/infinite-loop-01.jpg);
+  background-repeat: no-repeat;
+  height: 100vh;
+  min-height: 375px;
+  position: relative;
+}
+
+@media (min-height: 600px) and (min-width: 1920px) {
+  #infinite {
+    background-size: cover;
+  }
+}
+
+@media (min-height: 830px) {
+  #infinite {
+    background-position: center -210px;
+  }
+}
+
+@media (min-height: 680px) and (max-height: 829px) {
+  #infinite {
+    background-position: center -300px;
+  }
+}
+
+@media (min-height: 500px) and (max-height: 679px) {
+  #infinite {
+    background-position: center -400px;
+  }
+}
+
+@media (max-height: 499px) {
+  #infinite {
+    background-position: center -450px;
+  }
+}
