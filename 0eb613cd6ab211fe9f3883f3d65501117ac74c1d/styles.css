@@ -18,7 +18,27 @@ body {
     background-image: url("img/wood.jpg");
     background-color: #cccccc;
 }
+p.small {
+  line-height: 0.7;
+}
 
+p.big {
+  line-height: 1.8;
+  font-size: 30px;
+  font-family:'Dancing Script', cursive;
+  font-weight: 900;
+}
+p.normal {
+  font-weight: normal;
+}
+
+p.thick {
+  font-weight: bold;
+}
+
+p.thicker {
+  font-weight: 900;
+}
 .hero-image {
     background-image: url("img/infinite-loop-01.jpg"); /* The image used */
     background-color: #cccccc; /* Used if the image is unavailable */
@@ -36,6 +56,8 @@ body {
     padding: 10px;
     box-shadow: 0 0 10px 2px;
     font-family:'Dancing Script', cursive;
+    font-size: medium;
+    font-weight: bolder;
     
 }
 
@@ -45,8 +67,9 @@ body {
     border: 3px solid black;
     padding: 10px;
     text-align: center;
-    font-size: 40px;
+    font-size: 60px;
     font-family: 'Qwitcher Grypen', cursive;
+    font-weight: bolder;
   }
 
 .container-mini {
