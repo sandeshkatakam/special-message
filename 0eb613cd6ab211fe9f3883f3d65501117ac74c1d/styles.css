@@ -49,6 +49,7 @@ p.thicker {
   }
 
 .container {
+    margin-right: auto;
     width: 800px;
     max-width: 80%;
     background-color: rgb(242, 226, 226, 0.4);
@@ -60,6 +61,20 @@ p.thicker {
     font-weight: bolder;
     
 }
+.right-container {
+  margin-left: auto;
+  width: 400px;
+  max-width: 80%;
+  background-color: rgb(242, 226, 226, 0.4);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px;
+  font-family:'Dancing Script', cursive;
+  font-size: medium;
+  font-weight: bolder;
+  
+}
+
 
 .center {
     margin: auto;
