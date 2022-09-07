@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title></title>
-
+<link href="styles_first.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
@@ -19,7 +19,7 @@ body {
 
 .box {
 	border-radius: 3px;
-	background: rgba(101, 101, 101, 0.7); margin: auto; padding: 12px;
+	background: rgba(101, 101, 101, 0.7); margin: auto; padding: 20px;
 }
 
 .lightbox {
@@ -70,14 +70,20 @@ div.vertical {
 	<div id="loginbox" class="lightbox" >
 		<div class="horizontal">
 			<div class="vertical">
+				<div class = "center">Enter the high security password</div>
 				<div class="box">
-					<input style="margin: 16px; text-align: center;" id="password" type="password" placeholder="password" /> <br />
+					<input style="margin: 15px; text-align: center;" id="password" type="password" placeholder="password" /> <br />
 					<button id="loginbutton" type="button">Enter</button>
 					<p id="wrongPassword" style="display: none">wrong password</p>
 				</div>
 			</div>
+			<!-- <div class = "right-container">
+		
+			</div> -->
 		</div>
+		
 	</div>
+	
 
 
 

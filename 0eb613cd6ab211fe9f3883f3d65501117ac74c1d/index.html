@@ -17,10 +17,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <title>Special Message for special someone</title>
 </head>
 
 <body>
+    
     <div class="container">
         
         <div class = "center">A Special Message</div>
@@ -53,26 +55,69 @@
             PageMaker including versions of Lorem Ipsum. 
             <div id="question-container" class="hide"></div>
                 <div id="question"><p class= "big">Will you go out with me? </p></div>
+                <button onclick="window.location.href='../0eb613cd6ab211fe9f3883f3d65501117ac74c1d/second.html';">
+                    Click Here
+                  </button>
               <!---  <div id="answer-buttons" class="btn-grid">
                     <button class="btn">Yes</button>
                     <button class="btn">No</button>
                 </div>-->
             
             </div>
+            
 
         
         
-        
-        
-      </div>
+        </div>
       <div class="right-container">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-        Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-        It has survived not only five centuries, but also the leap into electronic typesetting, 
-        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
-        containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus 
-        PageMaker including versions of Lorem Ipsum
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide"><img src ="img/neeharika.png" alt=""></div>
+              <div class="swiper-slide"><img src ="img/neeharika_300.png" alt=""></div>
+              <div class="swiper-slide"><img src ="img/neeharika_300.png" alt=""></div>
+              ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+          </div>
+        
 
       </div>
+    
+      <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+      <script>
+        const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  
+});
+      </script>
 </body>
 </html>
