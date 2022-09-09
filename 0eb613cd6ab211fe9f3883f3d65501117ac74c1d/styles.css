@@ -100,7 +100,16 @@ p.thicker {
     font-weight: bolder;
     
 }
+#quote{
+  font-size:44px;
+  line-height:50px;
+  color:#dedede;
+}
 
+button {
+  padding:10px;
+  margin: 20px 0;
+}
 .container_new {
   
   position: center;
@@ -244,3 +253,13 @@ p.thicker {
     width: 100%;
   }
 }
+
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////// */
+
+
+
+

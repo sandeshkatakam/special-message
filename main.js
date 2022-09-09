@@ -1,141 +1,62 @@
-import lottieWeb from 'https://cdn.skypack.dev/lottie-web';
+const playerButton = document.querySelector('.player-button'),
+      audio = document.querySelector('audio'),
+      timeline = document.querySelector('.timeline'),
+      soundButton = document.querySelector('.sound-button'),
+      playIcon = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#3D3132">
+    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+  </svg>
+      `,
+      pauseIcon = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#3D3132">
+  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+</svg>
+      `,
+      soundIcon = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#3D3132">
+  <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clip-rule="evenodd" />
+</svg>`,
+      muteIcon = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#3D3132">
+  <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+</svg>`;
 
-const playIconContainer = document.getElementById('play-icon');
-const audioPlayerContainer = document.getElementById('audio-player-container');
-const seekSlider = document.getElementById('seek-slider');
-const volumeSlider = document.getElementById('volume-slider');
-const muteIconContainer = document.getElementById('mute-icon');
-let playState = 'play';
-let muteState = 'unmute';
-
-const playAnimation = lottieWeb.loadAnimation({
-  container: playIconContainer,
-  path: 'https://maxst.icons8.com/vue-static/landings/animated-icons/icons/pause/pause.json',
-  renderer: 'svg',
-  loop: false,
-  autoplay: false,
-  name: "Play Animation",
-});
-
-const muteAnimation = lottieWeb.loadAnimation({
-    container: muteIconContainer,
-    path: 'https://maxst.icons8.com/vue-static/landings/animated-icons/icons/mute/mute.json',
-    renderer: 'svg',
-    loop: false,
-    autoplay: false,
-    name: "Mute Animation",
-});
-
-playAnimation.goToAndStop(14, true);
-
-playIconContainer.addEventListener('click', () => {
-    if(playState === 'play') {
-        audio.play();
-        playAnimation.playSegments([14, 27], true);
-        requestAnimationFrame(whilePlaying);
-        playState = 'pause';
-    } else {
-        audio.pause();
-        playAnimation.playSegments([0, 14], true);
-        cancelAnimationFrame(raf);
-        playState = 'play';
-    }
-});
-
-muteIconContainer.addEventListener('click', () => {
-    if(muteState === 'unmute') {
-        muteAnimation.playSegments([0, 15], true);
-        audio.muted = true;
-        muteState = 'mute';
-    } else {
-        muteAnimation.playSegments([15, 25], true);
-        audio.muted = false;
-        muteState = 'unmute';
-    }
-});
-
-const showRangeProgress = (rangeInput) => {
-    if(rangeInput === seekSlider) audioPlayerContainer.style.setProperty('--seek-before-width', rangeInput.value / rangeInput.max * 100 + '%');
-    else audioPlayerContainer.style.setProperty('--volume-before-width', rangeInput.value / rangeInput.max * 100 + '%');
+function toggleAudio () {
+  if (audio.paused) {
+    audio.play();
+    playerButton.innerHTML = pauseIcon;
+  } else {
+    audio.pause();
+    playerButton.innerHTML = playIcon;
+  }
 }
 
-seekSlider.addEventListener('input', (e) => {
-    showRangeProgress(e.target);
-});
-volumeSlider.addEventListener('input', (e) => {
-    showRangeProgress(e.target);
-});
+playerButton.addEventListener('click', toggleAudio);
 
-
-
-
-
-/** Implementation of the functionality of the audio player */
-
-const audio = document.querySelector('audio');
-const durationContainer = document.getElementById('duration');
-const currentTimeContainer = document.getElementById('current-time');
-const outputContainer = document.getElementById('volume-output');
-let raf = null;
-
-const calculateTime = (secs) => {
-    const minutes = Math.floor(secs / 60);
-    const seconds = Math.floor(secs % 60);
-    const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
-    return `${minutes}:${returnedSeconds}`;
+function changeTimelinePosition () {
+  const percentagePosition = (100*audio.currentTime) / audio.duration;
+  timeline.style.backgroundSize = `${percentagePosition}% 100%`;
+  timeline.value = percentagePosition;
 }
 
-const displayDuration = () => {
-    durationContainer.textContent = calculateTime(audio.duration);
+audio.ontimeupdate = changeTimelinePosition;
+
+function audioEnded () {
+  playerButton.innerHTML = playIcon;
 }
 
-const setSliderMax = () => {
-    seekSlider.max = Math.floor(audio.duration);
+audio.onended = audioEnded;
+
+function changeSeek () {
+  const time = (timeline.value * audio.duration) / 100;
+  audio.currentTime = time;
 }
 
-const displayBufferedAmount = () => {
-    const bufferedAmount = Math.floor(audio.buffered.end(audio.buffered.length - 1));
-    audioPlayerContainer.style.setProperty('--buffered-width', `${(bufferedAmount / seekSlider.max) * 100}%`);
+timeline.addEventListener('change', changeSeek);
+
+function toggleSound () {
+  audio.muted = !audio.muted;
+  soundButton.innerHTML = audio.muted ? muteIcon : soundIcon;
 }
 
-const whilePlaying = () => {
-    seekSlider.value = Math.floor(audio.currentTime);
-    currentTimeContainer.textContent = calculateTime(seekSlider.value);
-    audioPlayerContainer.style.setProperty('--seek-before-width', `${seekSlider.value / seekSlider.max * 100}%`);
-    raf = requestAnimationFrame(whilePlaying);
-}
-
-if (audio.readyState > 0) {
-    displayDuration();
-    setSliderMax();
-    displayBufferedAmount();
-} else {
-    audio.addEventListener('loadedmetadata', () => {
-        displayDuration();
-        setSliderMax();
-        displayBufferedAmount();
-    });
-}
-
-audio.addEventListener('progress', displayBufferedAmount);
-
-seekSlider.addEventListener('input', () => {
-    currentTimeContainer.textContent = calculateTime(seekSlider.value);
-    if(!audio.paused) {
-        cancelAnimationFrame(raf);
-    }
-});
-
-seekSlider.addEventListener('change', () => {
-    audio.currentTime = seekSlider.value;
-    if(!audio.paused) {
-        requestAnimationFrame(whilePlaying);
-    }
-});
-
-volumeSlider.addEventListener('input', (e) => {
-    const value = e.target.value;
-
-    outputContainer.textContent = value;
-    audio.volume = value / 100;
-});
+soundButton.addEventListener('click', toggleSound);
