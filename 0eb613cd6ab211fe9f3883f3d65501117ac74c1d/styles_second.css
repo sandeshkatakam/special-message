@@ -25,20 +25,13 @@
 .swiper .swiper-pagination-bullet-active{
   background: #fff;
 }
-.button {
-  transition-duration: 0.4s;
-}
 
-.button:hover {
-  background-color: #4CAF50; /* Green */
-  color: white;
-}
-html {
+html{
     background: url(bgs/wood.jpg) no-repeat center center fixed;
     background-size: cover;
     height: 100%;
     overflow: hidden;
-  }
+}
 body {
     --hue: var(--hue-neutral);
     height: 100%;
