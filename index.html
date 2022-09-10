@@ -10,12 +10,16 @@
 </head>
 
 <style>
-
+html {
+  background: url(trees.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
 body {
 
-	background-image: url('grunge_patterns.jpg');
 	background-attachment: fixed;
-	color: #333;
+	
 }
 
 .box {
@@ -76,8 +80,15 @@ div.vertical {
 					<input style="margin: 15px; text-align: center;" id="password" type="password" placeholder="password" /> <br />
 					<button id="loginbutton" type="button">Enter</button>
 					<p id="wrongPassword" style="display: none">wrong password</p>
+					
 				</div>
-				
+				<div class = "center_new">
+					<marquee style= color:white>As long as you are here trying to crack this password, why not listen to this music..</marquee>
+				<audio controls loop autoplay>
+						<source src = "jetblackheart.mp3" type = "audio/mpeg">
+						
+					  </audio>
+				</div>
 				
 			</div>
 			<!-- <div class = "right-container">
