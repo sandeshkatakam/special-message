@@ -83,7 +83,7 @@ div.vertical {
 					
 				</div>
 				<div class = "center_new">
-					<marquee style= color:white>As long as you are here trying to crack this password, why not listen to this music..</marquee>
+					<marquee style= color:white>As long as you are here trying to crack this password, why not listen to this music while doing it..</marquee>
 				<audio controls loop autoplay>
 						<source src = "jetblackheart.mp3" type = "audio/mpeg">
 						
@@ -149,6 +149,33 @@ div.vertical {
 	$("#password").focus();
 
 	</script>
-
+	<script>
+		var now = new Date();
+		var hours = now.getHours();
+		var minutes = now.getMinutes();
+		var ft = now.toLocaleString("en-US", {
+			hour: "numeric",
+			minute: "numeric",
+			hour12: true
+		});
+		if (0 <= minutes && minutes < 15) {//Morning
+			document.write('<html style="background: url(sky.jpg) no-repeat center center fixed;  background-size: cover; height: 100%;overflow: hidden">');
+			var type = "Morning";
+		}
+		if (15 <= minutes && minutes < 30) {//Day
+			document.write('<html style="background: url(rocks.jpg) no-repeat center center fixed;  background-size: cover; height: 100%;overflow: hidden">');
+			var type = "Daytime";
+		}
+		if (30 <= minutes && minutes < 45) {//Evening
+			document.write('<html style="background: url(crackers.jpg) no-repeat center center fixed;  background-size: cover; height: 100%;overflow: hidden">');
+			var type = "Evening";
+		}
+		if (45 <= minutes && minutes < 60) {//Night
+			document.write('<html style="background: url(trees.jpg) no-repeat center center fixed;  background-size: cover; height: 100%;overflow: hidden">');
+			var type = "Nighttime";
+		}
+		document.getElementById("time").innerHTML = `The time is ${ft} it is ${type}`;
+		//CSS gradient backgrounds from https://uigradients.com
+	</script>
 </body>
 </html>
