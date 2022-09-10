@@ -16,6 +16,7 @@
     <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.9.1_min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>  
+    <script src="jquery-3.6.0.min.js"></script>
     <script>  
        $(window).on('load', function () {  
            $(".container_fun").fadeOut("fast");  
@@ -49,7 +50,7 @@
 </head>
 
 <body>
-    
+  
     <div class="container">
         
         <div class = "center">A Special Message</div>
@@ -96,7 +97,7 @@
 
         
         
-        </div>
+        
       <div class="right-container">
         <div class="swiper">
             <!-- Additional required wrapper -->
@@ -127,11 +128,14 @@
             </audio>
             
             
-          </div>
-        
+          
+        </div>
 
       </div>
-    
+    </div>
+      <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+      </div>
       <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
       <script>
         const swiper = new Swiper('.swiper', {
@@ -160,6 +164,12 @@
       </script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
       <script type="application/javascript" src="script.js"></script>
+      <script>
+        $(window).on("load",function(){
+          $(".loader-wrapper").fadeOut("slow");
+        });
+    </script>
+    
 </body>
 
 </html>
