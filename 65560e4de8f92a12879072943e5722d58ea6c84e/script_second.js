@@ -4,8 +4,9 @@ const elts = {
 };
 
 const texts = [
-    "Wait a second..",
-    "Okay, I think I am asking you out..",
+    "Welcome to Camp Half-Blood",
+    "So here goes the confession",
+    "I like you so much!!",
     "Will you go out with me?",
 ];
 
