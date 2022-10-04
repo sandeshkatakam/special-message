@@ -7,7 +7,9 @@ const texts = [
     "Welcome to Camp Half-Blood",
     "So here goes the confession",
     "I like you so much!!",
-    "Will you go out with me?",
+    "Sorry for doing this over a website",
+    "The thought of doing this in-person gave me two panic attacks",
+    "So, honestly I am worried for my life"
 ];
 
 const morphTime = 4;
