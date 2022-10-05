@@ -3,9 +3,9 @@
 
 
 @font-face {
-    font-family: 'pythiaregular';
-    src: url('pythia-webfont.woff2') format('woff2'),
-         url('pythia-webfont.woff') format('woff');
+    font-family: 'pacific_northwest_regularRg';
+    src: url('pacific_northwest_regular-webfont.woff2') format('woff2'),
+         url('pacific_northwest_regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 

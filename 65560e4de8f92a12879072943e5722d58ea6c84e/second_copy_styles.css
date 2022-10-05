@@ -83,6 +83,7 @@ p.thicker {
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
+    margin-bottom: 10px;
   }
   
   .button1 {
@@ -91,6 +92,8 @@ p.thicker {
     color: black; 
     font-weight:bolder;
     border: 2px solid #222;
+    
+    
   }
   
   .button1:hover {
@@ -108,12 +111,12 @@ p.thicker {
 
 #container_fini {
     position: absolute;
-    margin-left: 550px;
+    margin-left: 570px;
     margin-bottom: 600px;
     margin-top: 100px;
     font-family: 'Playfair Display', serif;
     width: 50vw;
-    height: 350pt;
+    height: 300pt;
     top: 0;
     bottom: 0;
     filter: url(#threshold) blur(0.6px);
@@ -153,10 +156,10 @@ p.thicker {
   margin: auto;
 }
 .img-container {
-  margin-right: 500px;
+  margin-right: 600px;
   margin-top : 100px;
   margin-bottom: 100px;
-  width: 8000px;
+  width: 7000px;
   max-width: 100%;
   background-color: rgb(242, 226, 226, 0.4);
   border-radius: 5px;
@@ -172,10 +175,8 @@ p.thicker {
 }
 
 .right-container {
-  margin-right: 110px;
-  margin-top : 470px;
-  margin-bottom: 5px;
-  width: 500px;
+  margin-top: 400px;
+  margin-bottom: 10px;
   max-width: 100%;
   background-color: rgb(242, 226, 226, 0.4);
   border-radius: 5px;
