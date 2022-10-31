@@ -278,12 +278,12 @@ p.thicker {
     position: absolute;
     width: 100%;
     display: inline-block;
-    font-family: 'Dancing Script', cursive;
-    font-size: 75pt;
+    font-family: 'windlassregular';
+    font-size: 60pt;
     overflow: hidden;
     text-align: center;
-    color: rgb(244, 237, 237);
-
+    color:  #fff;
+    font-weight: lighter;
     user-select: none;
 }
 

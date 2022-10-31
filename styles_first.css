@@ -40,9 +40,9 @@
     padding: 5px;
     text-align: center;
     font-size: 30px;
-    font-family: 'Bungee Spice', cursive;;
+    font-family: 'windlassregular';
     overflow-x: auto;
-    color: #fff;
+    color: #ae8624;
   }
 
   .audio-player {

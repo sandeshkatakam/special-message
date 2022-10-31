@@ -171,11 +171,11 @@ div.vertical {
 			hour12: true
 		});
 		if (0 <= minutes && minutes < 15) {//Morning
-			document.write('<html style="background: url(sky.jpg) no-repeat center center fixed;  background-size: cover; height: 100%;overflow: hidden">');
+			document.write('<html style="background: url(storm.jpg) no-repeat center center fixed;  background-size: cover; height: 100%;overflow: hidden">');
 			var type = "Morning";
 		}
 		if (15 <= minutes && minutes < 30) {//Day
-			document.write('<html style="background: url(rocks.jpg) no-repeat center center fixed;  background-size: cover; height: 100%;overflow: hidden">');
+			document.write('<html style="background: url(newyork_lightning.jpg) no-repeat center center fixed;  background-size: cover; height: 100%;overflow: hidden">');
 			var type = "Daytime";
 		}
 		if (30 <= minutes && minutes < 45) {//Evening
@@ -183,7 +183,7 @@ div.vertical {
 			var type = "Evening";
 		}
 		if (45 <= minutes && minutes < 60) {//Night
-			document.write('<html style="background: url(lightning.jpg) no-repeat center center fixed;  background-size: cover; height: 100%;overflow: hidden">');
+			document.write('<html style="background: url(sunset.jpg) no-repeat center center fixed;  background-size: cover; height: 100%;overflow: hidden">');
 			var type = "Nighttime";
 		}
 		document.getElementById("time").innerHTML = `The time is ${ft} it is ${type}`;
